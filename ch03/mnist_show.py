@@ -1,6 +1,10 @@
 # coding: utf-8
 import sys, os
-sys.path.append(os.pardir)  # 親ディレクトリのファイルをインポートするための設定
+
+current_path = os.path.dirname(os.path.abspath(__file__))
+project_path = os.path.abspath(os.path.join(current_path, os.pardir))
+
+sys.path.append(project_path)  # 从父目录导入文件的设置
 import numpy as np
 from dataset.mnist import load_mnist
 from PIL import Image
